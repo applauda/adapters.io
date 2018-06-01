@@ -1,4 +1,4 @@
-# Adapters.IO
+# Adapters.IO [![Build Status](https://travis-ci.org/applauda/adapters.io.svg?branch=master)](https://travis-ci.org/applauda/adapters.io)
 
 ## What is Adapters.IO
 
