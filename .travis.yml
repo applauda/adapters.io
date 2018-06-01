@@ -1,7 +1,10 @@
-language : node_js
-node_js :
- - stable
+language: node_js
+node_js:
+- stable
 install:
- - npm install
+- npm install
 script:
- - npm test
+- npm test
+before_install:
+- openssl aes-256-cbc -K $encrypted_5d49e93d4847_key -iv $encrypted_5d49e93d4847_iv
+  -in secrets.ts.enc -out test/secrets.ts -d
