@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "rootDir": "./lib",
+    "outDir": "./dist",
+    "allowJs": false,
+    "sourceMap": false,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2016"]
+  },
+  "include": ["./lib/**/*"]
+}

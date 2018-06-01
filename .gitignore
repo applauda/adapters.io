@@ -1,0 +1,15 @@
+node_modules
+
+# Ignore output from coverage report
+coverage
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+#dist/**/*
+
+# secrets
+test/secrets.ts
+
