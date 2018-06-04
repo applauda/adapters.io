@@ -207,11 +207,9 @@ test('dispatch set color', async () => {
 
 test('register device', async () => {
   const request = {
-    body: {
-      command: 'registerDevice',
-      payload: {
-        user: 'user',
-      },
+    command: 'registerDevice',
+    payload: {
+      user: 'user',
     }
   };
   const adapterMock = {

@@ -10,8 +10,8 @@ export default class AlexaDispatcher {
   async dispatch(event: any, context: any) {
     logger.info('Request event: ', JSON.stringify(event), JSON.stringify(context));
 
-    if (event && event.body && event.body.command === 'registerDevice') {
-      const answer = await this.adapter.registerDevice(event.body.payload.user);
+    if (event && event.command === 'registerDevice') {
+      const answer = await this.adapter.registerDevice(event.payload.user);
       context.succeed(answer);
     } else if (
       event.directive.header.namespace === 'Alexa.Discovery' &&
