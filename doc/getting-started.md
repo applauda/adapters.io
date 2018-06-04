@@ -234,9 +234,11 @@ This is done via this event:
 
 ```json
 {
-  "command": "registerDevice",
-  "payload": {
-    "user": "USER_ID"
+  "body": {
+    "command": "registerDevice",
+    "payload": {
+      "user": "USER_ID"
+    }
   }
 }
 ```

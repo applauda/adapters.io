@@ -207,10 +207,12 @@ test('dispatch set color', async () => {
 
 test('register device', async () => {
   const request = {
-    command: 'registerDevice',
-    payload: {
-      user: 'user',
-    },
+    body: {
+      command: 'registerDevice',
+      payload: {
+        user: 'user',
+      },
+    }
   };
   const adapterMock = {
     registerDevice: jest.fn().mockReturnValueOnce('answer'),

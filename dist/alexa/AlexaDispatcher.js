@@ -48,8 +48,8 @@ var AlexaDispatcher = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         logger.info('Request event: ', JSON.stringify(event), JSON.stringify(context));
-                        if (!(event.command === 'registerDevice')) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.adapter.registerDevice(event.payload.user)];
+                        if (!(event && event.body && event.body.command === 'registerDevice')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.adapter.registerDevice(event.body.payload.user)];
                     case 1:
                         answer = _a.sent();
                         context.succeed(answer);
