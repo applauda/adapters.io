@@ -108,7 +108,7 @@ export default class AlexaAdapter {
     } else {
       powerResult = false;
     }
-    this.smartHomeService.switchLight(userId, deviceId, powerResult);
+    await this.smartHomeService.switchLight(userId, deviceId, powerResult);
 
     const contextResult = {
       properties: [
@@ -208,7 +208,7 @@ export default class AlexaAdapter {
 
     const deviceId = event.directive.endpoint.endpointId;
     const { brightness } = event.directive.payload;
-    this.smartHomeService.setBrightness(userId, deviceId, brightness);
+    await this.smartHomeService.setBrightness(userId, deviceId, brightness);
 
     const responseHeader = event.directive.header;
     responseHeader.namespace = "Alexa";
@@ -251,7 +251,7 @@ export default class AlexaAdapter {
     const currentBrightness = states[deviceId].brightness;
     const brightness = Math.max(0, Math.min(100, currentBrightness + delta));
 
-    this.smartHomeService.setBrightness(userId, deviceId, brightness);
+    await this.smartHomeService.setBrightness(userId, deviceId, brightness);
 
     const responseHeader = event.directive.header;
     responseHeader.namespace = "Alexa";

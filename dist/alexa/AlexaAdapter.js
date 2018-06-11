@@ -149,7 +149,9 @@ var AlexaAdapter = /** @class */ (function () {
                         else {
                             powerResult = false;
                         }
-                        this.smartHomeService.switchLight(userId, deviceId, powerResult);
+                        return [4 /*yield*/, this.smartHomeService.switchLight(userId, deviceId, powerResult)];
+                    case 2:
+                        _a.sent();
                         contextResult = {
                             properties: [
                                 {
@@ -262,7 +264,9 @@ var AlexaAdapter = /** @class */ (function () {
                         userId = _a.sent();
                         deviceId = event.directive.endpoint.endpointId;
                         brightness = event.directive.payload.brightness;
-                        this.smartHomeService.setBrightness(userId, deviceId, brightness);
+                        return [4 /*yield*/, this.smartHomeService.setBrightness(userId, deviceId, brightness)];
+                    case 2:
+                        _a.sent();
                         responseHeader = event.directive.header;
                         responseHeader.namespace = "Alexa";
                         responseHeader.name = "Response";
@@ -310,7 +314,9 @@ var AlexaAdapter = /** @class */ (function () {
                         states = _a.sent();
                         currentBrightness = states[deviceId].brightness;
                         brightness = Math.max(0, Math.min(100, currentBrightness + delta));
-                        this.smartHomeService.setBrightness(userId, deviceId, brightness);
+                        return [4 /*yield*/, this.smartHomeService.setBrightness(userId, deviceId, brightness)];
+                    case 3:
+                        _a.sent();
                         responseHeader = event.directive.header;
                         responseHeader.namespace = "Alexa";
                         responseHeader.name = "Response";
